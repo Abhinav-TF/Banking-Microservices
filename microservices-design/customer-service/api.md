@@ -4,6 +4,15 @@
 - **Via gateway:** `http://localhost:8080/customers/**`
 - **Role:** leaf service — exposes customer CRUD + validation; **calls no other service**.
 
+## Authentication
+
+- All endpoints sit behind the gateway JWT filter and receive a verified `X-Customer-Id` header
+  (see `infra/gateway-and-discovery.md`). Reads use it for ownership checks; `GET /customers/{id}`
+  should only return the caller's own record unless an admin scope is added later.
+- **`POST /customers` is normally called by Auth Service**, not the client directly: `POST
+  /auth/register` creates the customer and then stores the credential (see `auth-service/api.md`).
+  The endpoint is unchanged, so Auth reuses it as-is.
+
 ## Endpoints exposed
 
 ### `POST /customers` — create a customer

@@ -4,12 +4,20 @@
 - **Via gateway:** `http://localhost:8080/wallets/**`
 - **Role:** owns Paytm/PhonePe wallets. Calls Customer (validate), Transaction (record), Notification (limit-exceeded).
 
+## Authentication
+
+- Behind the gateway JWT filter; every request carries a verified `X-Customer-Id` header.
+- **`customerId` is taken from `X-Customer-Id`, not the request body** — a caller creates and
+  operates only on their own wallets. The `customerId` field is dropped from `POST /wallets`.
+- Wallet operations and `GET /wallets?customerId=` are ownership-checked (`403 Forbidden` otherwise).
+
 ## Endpoints exposed
 
 ### `POST /wallets` — create a wallet
+`customerId` comes from the authenticated `X-Customer-Id`.
 Request:
 ```json
-{ "customerId": "6699a1f2c3d4e5f601234567", "provider": "PAYTM", "maxLimit": 10000.00 }
+{ "provider": "PAYTM", "maxLimit": 10000.00 }
 ```
 Response `201`: wallet document. Error: `404` unknown customer.
 → **Calls** `GET /customers/{customerId}` first.
@@ -49,3 +57,4 @@ Request: `{ "targetWalletId": "6699a7...73", "amount": 300.00 }` → Response `2
 | Paytm limit exceeded | 400 Bad Request (+ notification logged) |
 | `InvalidAmountException` | 422 Unprocessable Entity |
 | unknown customer / wallet | 404 Not Found |
+| wallet/list owned by another customer | 403 Forbidden |

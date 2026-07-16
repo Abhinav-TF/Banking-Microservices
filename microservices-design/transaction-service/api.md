@@ -4,6 +4,16 @@
 - **Via gateway:** `http://localhost:8080/transactions/**`
 - **Role:** leaf service — the transaction ledger. Written to by Account & Wallet; **calls no other service**.
 
+## Authentication
+
+- **`GET /transactions*` (client reads)** go through the gateway and carry a verified
+  `X-Customer-Id`; the list is scoped to that owner (`GET /transactions?ownerId=` must match, else
+  `403 Forbidden`).
+- **`POST /transactions` (writes)** are **internal** — Account/Wallet call it directly by Eureka name
+  (`lb://transaction-service`), bypassing the gateway. `ownerId` is set by the calling service from
+  the customer it already authenticated. Not exposed to end clients (no `/transactions` write route
+  is needed publicly, though the path is reachable if opened).
+
 ## Endpoints exposed
 
 ### `POST /transactions` — record a transaction

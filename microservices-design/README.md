@@ -1,7 +1,7 @@
 # T&F International Bank — Microservices Design
 
 This folder holds the **design artifacts** for converting the single-process console banking app
-(`src/bankingRoot/bank/`) into 5 independently deployable microservices.
+(`src/bankingRoot/bank/`) into 6 independently deployable microservices (5 business + 1 auth).
 
 - **Stack:** Spring Boot + Spring Cloud (Eureka discovery + Spring Cloud Gateway)
 - **Persistence:** MongoDB, **one database per service** (Spring Data MongoDB)
@@ -19,6 +19,11 @@ This folder holds the **design artifacts** for converting the single-process con
 | 3 | Transaction | `transactiondb` | `transactions` | 8083 | — (leaf) |
 | 4 | Wallet | `walletdb` | `wallets` | 8084 | Customer, Transaction, Notification |
 | 5 | Notification/Logging | `notificationdb` | `logs` | 8085 | — (leaf) |
+| 6 | Auth | `authdb` | `credentials` | 8086 | Customer |
+
+> **Auth Service** is a platform/security service (not one of the original 5 business services). It
+> stores login credentials and issues JWTs. ⚠️ **Passwords are stored in plain text by design for
+> this iteration** — demo/learning only, never production. See `auth-service/schema.md`.
 
 Supporting infrastructure (not counted among the 5 business services):
 
@@ -30,6 +35,8 @@ Supporting infrastructure (not counted among the 5 business services):
 ## Dependency graph (acyclic)
 
 ```
+        Auth ────────────────────────────┐ create customer (register)
+                                          ▼
         Customer (leaf) ◄───────────────┐
                                         │ validate owner
    Transaction (leaf) ◄──────┐          │
@@ -42,8 +49,23 @@ Supporting infrastructure (not counted among the 5 business services):
 ```
 
 - **Leaves (no outbound calls):** Customer, Transaction, Notification.
+- **Auth** calls Customer (`POST /customers` on register).
 - **Account** calls Customer (validate) + Transaction (record).
 - **Wallet** calls Customer (validate) + Transaction (record) + Notification (limit-exceeded log).
+
+## Authentication & security
+
+- **Every client request enters through the gateway with a JWT** (except `POST /auth/register` and
+  `POST /auth/login`, which are public). The gateway validates the JWT and forwards the caller's
+  identity to downstream services as trusted headers.
+- **JWT is issued by Auth Service** (`HS256`, shared `jwt.secret`, `sub = customerId`, 1-hour expiry)
+  and **validated at the API Gateway**. See `auth-service/api.md` §JWT contract and
+  `infra/gateway-and-discovery.md` §JWT validation filter.
+- **Downstream services trust the gateway, not the client.** The gateway strips any client-supplied
+  `X-Customer-Id` and re-injects `X-Customer-Id` / `X-Auth-Email` from the verified token. Account,
+  Wallet and Transaction take the acting customer from `X-Customer-Id` (ownership checks) instead of
+  trusting a `customerId` in the request body/query. See each service's `api.md` §Authentication.
+- ⚠️ **Plain-text passwords** are a deliberate simplification for this iteration only.
 
 ## Mapping from the legacy console app
 
@@ -55,6 +77,7 @@ Supporting infrastructure (not counted among the 5 business services):
 | `wallet/*`, `service/WalletOps.java` | Wallet Service |
 | `util/FileLogger.java` | Notification/Logging Service |
 | `exception/*` | Split to owning service, mapped via `@RestControllerAdvice` |
+| _(no legacy equivalent — console app had no login)_ | Auth Service (new) |
 
 ## Key changes vs the monolith
 

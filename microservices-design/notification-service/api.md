@@ -4,6 +4,13 @@
 - **Via gateway:** `http://localhost:8080/notifications/**` and `http://localhost:8080/logs/**`
 - **Role:** leaf service — central event/error log. Written to by other services; **calls no other service**.
 
+## Authentication
+
+- **`GET /logs?ownerId=` (client reads)** go through the gateway and carry a verified `X-Customer-Id`;
+  the list is scoped to that owner (`403 Forbidden` if `ownerId` is another customer).
+- **`POST /notifications` (writes)** are internal, from other services — not a client-facing route.
+  (In the Kafka variant this write endpoint is removed entirely; see `kafka-design.md`.)
+
 ## Endpoints exposed
 
 ### `POST /notifications` — record an event / log entry

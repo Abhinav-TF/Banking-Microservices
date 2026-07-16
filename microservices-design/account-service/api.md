@@ -4,13 +4,21 @@
 - **Via gateway:** `http://localhost:8080/accounts/**`
 - **Role:** owns bank accounts + balance operations. Calls Customer (validate) and Transaction (record).
 
+## Authentication
+
+- Behind the gateway JWT filter; every request carries a verified `X-Customer-Id` header.
+- **`customerId` is taken from `X-Customer-Id`, not the request body** — a caller can only open and
+  operate on accounts for themselves. The `customerId` field is dropped from `POST /accounts`.
+- Balance operations and `GET /accounts?customerId=` are ownership-checked against `X-Customer-Id`
+  (`403 Forbidden` if the account/list belongs to another customer).
+
 ## Endpoints exposed
 
 ### `POST /accounts` — open an account
-Ported from `service/CreateAccount`.
+Ported from `service/CreateAccount`. `customerId` comes from the authenticated `X-Customer-Id`.
 Request:
 ```json
-{ "customerId": "6699a1f2c3d4e5f601234567", "type": "SAVINGS", "accountNumber": 100001, "openingBalance": 10000.00 }
+{ "type": "SAVINGS", "accountNumber": 100001, "openingBalance": 10000.00 }
 ```
 Response `201`: the account document. Errors: `404` unknown customer · `409` duplicate accountNumber.
 → **Calls** `GET /customers/{customerId}` first.
@@ -56,3 +64,4 @@ Errors: `400` insufficient funds · `404` unknown account.
 | `InvalidAmountException` | 422 Unprocessable Entity |
 | unknown customer / account | 404 Not Found |
 | duplicate accountNumber | 409 Conflict |
+| account/list owned by another customer | 403 Forbidden |
