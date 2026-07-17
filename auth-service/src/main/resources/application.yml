@@ -1,0 +1,22 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: auth-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: authdb
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# HS256 signing secret — MUST match api-gateway's jwt.secret. Override via env in real deployments.
+jwt:
+  secret: ${JWT_SECRET:ThisIsAVeryStringSecretKeyThatCanNotBeGuessedAtAllTryToGuessItIfYouCan}
+  expiration: 3600000 # 1 hour in milliseconds

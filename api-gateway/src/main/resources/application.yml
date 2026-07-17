@@ -19,6 +19,12 @@ spring:
 
           routes:
 
+            # Auth Service (public: /auth/register, /auth/login)
+            - id: auth-service
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/auth/**
+
             # Customer Service
             - id: customer-service
               uri: lb://CUSTOMER-SERVICE
@@ -95,6 +101,10 @@ eureka:
 
   instance:
     prefer-ip-address: true
+
+# HS256 signing secret — MUST match auth-service's jwt.secret. Override via env in real deployments.
+jwt:
+  secret: ${JWT_SECRET:ThisIsAVeryStringSecretKeyThatCanNotBeGuessedAtAllTryToGuessItIfYouCan}
 
 management:
   tracing:
