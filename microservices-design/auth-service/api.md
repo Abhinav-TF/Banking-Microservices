@@ -44,7 +44,7 @@ Flow: look up credential by `email`; compare `password` as a **plain string**; o
 Response `200`:
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiJ9...",
+  "token": "eyJhbGciOiJIUzUxMiJ9...",
   "tokenType": "Bearer",
   "expiresIn": 3600,
   "customerId": "6699a1f2c3d4e5f601234567"
@@ -59,8 +59,10 @@ who it is logged in as.
 
 ## JWT contract
 
-- **Algorithm:** `HS256` (HMAC-SHA256) with a shared secret `jwt.secret` present in **both**
-  `auth-service` and `api-gateway` config. (RSA/JWKS is future work.)
+- **Algorithm:** `HS512` (HMAC-SHA512) with a shared secret `jwt.secret` present in **both**
+  `auth-service` and `api-gateway` config. jjwt auto-selects the HMAC variant from the key length;
+  the shared secret is ≥64 bytes, so it signs with HS512. (Pin explicitly or use a 32-byte key for
+  HS256; RSA/JWKS is future work.)
 - **Claims:**
 
 | Claim | Value |
@@ -84,6 +86,6 @@ who it is logged in as.
 | Exception / condition | HTTP status |
 |-----------------------|-------------|
 | `DuplicateCredentialException` (email already registered) | 409 Conflict |
-| `InvalidEmailException` / `InvalidPhoneNumberException` | 400 Bad Request |
-| `WeakPasswordException` (blank / < 6 chars) | 400 Bad Request |
+| `FeignException` — customer duplicate propagated (409) / other reject | mirrors customer-service (409 / 400) |
+| `MethodArgumentNotValidException` — bean validation: invalid email (`@Email`), phone (`@Pattern`), weak password (`@Size` min 6) | 400 Bad Request |
 | `InvalidCredentialsException` (bad login) | 401 Unauthorized |

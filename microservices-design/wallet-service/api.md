@@ -20,7 +20,7 @@ Request:
 { "provider": "PAYTM", "maxLimit": 10000.00 }
 ```
 Response `201`: wallet document. Error: `404` unknown customer.
-→ **Calls** `GET /customers/{customerId}` first.
+→ **Calls** `GET /customers/{customerId}/exists` first (internal, not ownership-checked).
 
 ### `GET /wallets?customerId={id}` — list a customer's wallets
 Response `200`: array of wallets.
@@ -45,7 +45,7 @@ Request: `{ "targetWalletId": "6699a7...73", "amount": 300.00 }` → Response `2
 
 | Target service | URL | When |
 |----------------|-----|------|
-| Customer | `GET /customers/{id}` | Validate owner on wallet creation. |
+| Customer | `GET /customers/{id}/exists` | Validate owner on wallet creation (internal, not ownership-checked). |
 | Transaction | `POST /transactions` | Record every add / pay / transfer leg. |
 | Notification | `POST /notifications` | Paytm balance exceeds `maxLimit` (replaces `FileLogger`). |
 

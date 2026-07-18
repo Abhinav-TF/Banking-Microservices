@@ -21,7 +21,7 @@ Request:
 { "type": "SAVINGS", "accountNumber": 100001, "openingBalance": 10000.00 }
 ```
 Response `201`: the account document. Errors: `404` unknown customer · `409` duplicate accountNumber.
-→ **Calls** `GET /customers/{customerId}` first.
+→ **Calls** `GET /customers/{customerId}/exists` first (internal, not ownership-checked).
 
 ### `GET /accounts/{id}` — fetch one account
 Response `200`: account document. `404` if not found.
@@ -53,7 +53,7 @@ Errors: `400` insufficient funds · `404` unknown account.
 
 | Target service | URL | When |
 |----------------|-----|------|
-| Customer | `GET /customers/{id}` | Validate owner on account creation. |
+| Customer | `GET /customers/{id}/exists` | Validate owner on account creation (internal, not ownership-checked). |
 | Transaction | `POST /transactions` | Record every deposit / withdraw / transfer leg. |
 
 ## Error mapping
