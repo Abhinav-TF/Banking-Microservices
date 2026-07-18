@@ -41,8 +41,20 @@ public class CustomerService {
         return ReqToResMapper.mapToCustomerResponse(customer);
     }
 
+    /** Existence check for internal owner-validation by Account/Wallet services. */
+    public boolean existsById(String id) {
+        return repository.existsById(id);
+    }
+
     public List<CustomerResponse> getAll() {
         List<Customer> customers = repository.findAll();
+        return customers.stream()
+                .map(ReqToResMapper::mapToCustomerResponse)
+                .toList();
+    }
+
+    public List<CustomerResponse> getAllExcept(String excludeId) {
+        List<Customer> customers = repository.findByIdNot(excludeId);
         return customers.stream()
                 .map(ReqToResMapper::mapToCustomerResponse)
                 .toList();

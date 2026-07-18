@@ -1,6 +1,8 @@
 package com.tnf.customer.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tnf.customer.dto.CreateCustomerRequest;
@@ -52,9 +55,29 @@ public class CustomerController {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Internal owner-validation endpoint for Account/Wallet services.
+     * Intentionally NOT ownership-checked — these are service-to-service Feign calls (via Eureka,
+     * bypassing the gateway) that carry no X-Customer-Id. Returns whether the customer exists.
+     */
+    @GetMapping("/{id}/exists")
+    public ResponseEntity<Map<String, Object>> exists(@PathVariable String id) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("id", id);
+        body.put("exists", customerService.existsById(id));
+        return ResponseEntity.ok(body);
+    }
+
     @GetMapping
-    public ResponseEntity<List<CustomerResponse>> list() {
-        List<CustomerResponse> customers = customerService.getAll();
+    public ResponseEntity<List<CustomerResponse>> list(
+            @RequestParam(value = "excludeId", required = false) String excludeId,
+            @RequestHeader(value = "X-Customer-Id", required = false) String callerId) {
+        if (!StringUtils.hasText(callerId)) {
+            throw new UnauthorizedException("Missing authenticated caller identity");
+        }
+        List<CustomerResponse> customers = StringUtils.hasText(excludeId)
+                ? customerService.getAllExcept(excludeId)
+                : customerService.getAll();
         return ResponseEntity.ok(customers);
     }
 }
