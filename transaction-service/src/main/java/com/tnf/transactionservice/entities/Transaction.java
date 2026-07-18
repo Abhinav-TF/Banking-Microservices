@@ -1,6 +1,7 @@
 package com.tnf.transactionservice.entities;
 
 
+import com.tnf.transactionservice.dto.TransactionRequestDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
@@ -22,14 +23,23 @@ public class Transaction {
         super();
     }
 
-    public Transaction(String id, String orderId, String type, String direction, BigDecimal amount, BigDecimal balanceAfter) {
+    public Transaction(String orderId, String type, String direction, BigDecimal amount, BigDecimal balanceAfter) {
         super();
-        this.id = id;
         this.orderId = orderId;
         this.type = type;
         this.direction = direction;
         this.amount = amount;
         this.balanceAfter = balanceAfter;
+        this.timestamp = LocalDateTime.now();
+    }
+
+    public Transaction(TransactionRequestDto transactionRequestDto) {
+        super();
+        this.orderId = transactionRequestDto.getOwnerId();
+        this.type = transactionRequestDto.getType();
+        this.direction = transactionRequestDto.getDirection();
+        this.amount = transactionRequestDto.getAmount();
+        this.balanceAfter = transactionRequestDto.getBalanceAfter();
         this.timestamp = LocalDateTime.now();
     }
 
