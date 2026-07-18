@@ -26,14 +26,6 @@ public class TransactionRequestDto {
 
 
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getOwnerId() {
         return ownerId;
     }
@@ -77,8 +69,7 @@ public class TransactionRequestDto {
     @Override
     public String toString() {
         return "TransactionRequestDto{" +
-                "id='" + id + '\'' +
-                ", ownerId='" + ownerId + '\'' +
+                "ownerId='" + ownerId + '\'' +
                 ", type='" + type + '\'' +
                 ", direction='" + direction + '\'' +
                 ", amount=" + amount +

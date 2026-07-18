@@ -12,7 +12,7 @@ public class Transaction {
 
     @Id
     private String id;
-    private String orderId;
+    private String ownerId;
     private String type;
     private String direction;
     private BigDecimal amount;
@@ -23,9 +23,9 @@ public class Transaction {
         super();
     }
 
-    public Transaction(String orderId, String type, String direction, BigDecimal amount, BigDecimal balanceAfter) {
+    public Transaction(String ownerId, String type, String direction, BigDecimal amount, BigDecimal balanceAfter) {
         super();
-        this.orderId = orderId;
+        this.ownerId = ownerId;
         this.type = type;
         this.direction = direction;
         this.amount = amount;
@@ -35,7 +35,7 @@ public class Transaction {
 
     public Transaction(TransactionRequestDto transactionRequestDto) {
         super();
-        this.orderId = transactionRequestDto.getOwnerId();
+        this.ownerId = transactionRequestDto.getOwnerId();
         this.type = transactionRequestDto.getType();
         this.direction = transactionRequestDto.getDirection();
         this.amount = transactionRequestDto.getAmount();
@@ -51,12 +51,12 @@ public class Transaction {
         this.id = id;
     }
 
-    public String getOrderId() {
-        return orderId;
+    public String getOwnerId() {
+        return ownerId;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getType() {
@@ -103,7 +103,7 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "id='" + id + '\'' +
-                ", orderId='" + orderId + '\'' +
+                ", ownerId='" + ownerId + '\'' +
                 ", type='" + type + '\'' +
                 ", direction='" + direction + '\'' +
                 ", amount=" + amount +
