@@ -9,7 +9,8 @@ public class ReqToResMapper {
                 customer.getId(),
                 customer.getName(),
                 customer.getEmail(),
-                customer.getPhone()
+                customer.getPhone(),
+                customer.getCreatedAt()
         );
     }
 }

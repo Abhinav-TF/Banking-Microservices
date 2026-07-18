@@ -9,8 +9,8 @@ public class CreateCustomerRequest {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-    @NotBlank(message = "Email is mandatory")
     @Email(message = "Email should be valid")
+    @NotBlank(message = "Email is mandatory")
     private String email;
 
     @NotBlank(message = "Phone number is mandatory")

@@ -22,6 +22,7 @@ public class CustomerService {
     }
 
     public CustomerResponse create(CreateCustomerRequest request) {
+
         if (repository.existsByEmail(request.getEmail())) {
             throw new DuplicateCustomerException("Customer with email " + request.getEmail() + " already exists");
         }
@@ -41,7 +42,6 @@ public class CustomerService {
         return ReqToResMapper.mapToCustomerResponse(customer);
     }
 
-    /** Existence check for internal owner-validation by Account/Wallet services. */
     public boolean existsById(String id) {
         return repository.existsById(id);
     }
