@@ -1,9 +1,6 @@
 package com.tnf.accountservice.service;
 
-import com.tnf.accountservice.entity.Account;
-import com.tnf.accountservice.entity.Amount;
-import com.tnf.accountservice.entity.CustomerDTO;
-import com.tnf.accountservice.entity.Transfer;
+import com.tnf.accountservice.entity.*;
 import com.tnf.accountservice.exception.InsufficientBalanceException;
 import com.tnf.accountservice.exception.InvalidAmountException;
 import com.tnf.accountservice.repository.AccountRepository;
@@ -85,7 +82,15 @@ public class AccountService {
 
         if(amount > 0){
             account.setBalance(account.getBalance() + amount);
+            // update the balance
             repository.save(account);
+
+            // create new Transaction
+            logger.info("new transaction creation");
+            TransactionDTO tx = new TransactionDTO(account.getId(), account.getType(), "DEPOSIT", amount, account.getBalance());
+            createTransaction(tx);
+            logger.info("new tx: {}", tx);
+
             logger.info("{} - Updated balance: {} ", accountId, account.getBalance());
             return (accountId + " - updated balance: " + account.getBalance());
         }
@@ -102,7 +107,16 @@ public class AccountService {
 
         if(amount > 0 && account.getBalance() >= amount){
             account.setBalance(account.getBalance() - amount);
+
+            // update the balance
             repository.save(account);
+
+            // create new Transaction
+            logger.info("new transaction creation");
+            TransactionDTO tx = new TransactionDTO(account.getId(), account.getType(), "WITHDRAW", amount, account.getBalance());
+            createTransaction(tx);
+            logger.info("new tx: {}", tx);
+
             logger.info("{} - Updated balance: {} ", accountId, account.getBalance());
             return (accountId + " - updated balance: " + account.getBalance());
         }
@@ -142,6 +156,30 @@ public class AccountService {
         catch (Exception e){
             logger.error("Error in retrieving customer: {}", e.getMessage(), e);
             return null;
+        }
+    }
+    
+    // POST Transaction
+    
+    
+    private void createTransaction(TransactionDTO tx){
+        try{
+            String transactionServiceUrl = "http://TRANSACTION-SERVICE/api/transactions";
+
+            logger.info("Calling Transaction Service: {}", transactionServiceUrl);
+            webClientBuilder
+                    .post()
+                    .uri(transactionServiceUrl)
+                    .bodyValue(tx)
+                    .retrieve()
+                    .bodyToMono(TransactionDTO.class)
+                    .block();
+        }
+        catch (WebClientResponseException.NotFound e){
+            logger.error("Transaction service error: {} - {}", e.getStatusCode(),e.getResponseBodyAsString());
+        }
+        catch (Exception e){
+            logger.error("Transaction service call failed : {}", e.getMessage());
         }
     }
 }
