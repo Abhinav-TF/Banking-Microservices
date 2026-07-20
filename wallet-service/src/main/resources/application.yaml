@@ -1,5 +1,6 @@
 server:
   port: 8084
+  forward-headers-strategy: framework
 
 spring:
   application:
@@ -51,3 +52,9 @@ info:
     name: Wallet Service
     version: 1.0.0
     description: Owns Paytm/PhonePe wallets (create, add money, pay bill, transfer)
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

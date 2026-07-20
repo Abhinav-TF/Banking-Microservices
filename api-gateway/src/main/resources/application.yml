@@ -59,6 +59,13 @@ spring:
             # Swagger/OpenAPI Routes
             ####################################################
 
+            - id: auth-docs
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/auth-docs/v3/api-docs
+              filters:
+                - SetPath=/v3/api-docs
+
             - id: customer-docs
               uri: lb://CUSTOMER-SERVICE
               predicates:
@@ -84,13 +91,6 @@ spring:
               uri: lb://WALLET-SERVICE
               predicates:
                 - Path=/wallet/v3/api-docs
-              filters:
-                - SetPath=/v3/api-docs
-
-            - id: notification-docs
-              uri: lb://NOTIFICATION-SERVICE
-              predicates:
-                - Path=/notification/v3/api-docs
               filters:
                 - SetPath=/v3/api-docs
 
@@ -145,6 +145,9 @@ info:
 springdoc:
   swagger-ui:
     urls:
+      - name: Auth Service
+        url: /auth-docs/v3/api-docs
+
       - name: Customer Service
         url: /customer/v3/api-docs
 
@@ -156,6 +159,3 @@ springdoc:
 
       - name: Wallet Service
         url: /wallet/v3/api-docs
-
-      - name: Notification Service
-        url: /notification/v3/api-docs

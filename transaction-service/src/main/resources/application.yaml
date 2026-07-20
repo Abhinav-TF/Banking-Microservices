@@ -1,13 +1,15 @@
 server:
   port: 8083
+  forward-headers-strategy: framework
 
 spring:
   application:
     name: transaction-service
   profiles:
     active: dev
-  mongodb:
-    uri: ${MONGODB_URI:mongodb://localhost:27017/transactiondb}
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/transactiondb}
 
 eureka:
   client:
@@ -29,3 +31,9 @@ info:
     name: Order Service
     version: 1.0.0
     description: Manages orders
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
