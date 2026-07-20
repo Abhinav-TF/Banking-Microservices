@@ -1,0 +1,53 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: wallet-service
+
+  profiles:
+    active: dev
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/walletdb}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+
+  instance:
+    prefer-ip-address: true
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+    propagation:
+      type: b3
+    export:
+      zipkin:
+        endpoint: http://localhost:9411/api/v2/spans
+
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,metrics,beans,refresh,httpexchanges,prometheus
+
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    "[com.tnf.walletservice]": DEBUG
+    "[io.micrometer.tracing]": DEBUG
+
+info:
+  app:
+    name: Wallet Service
+    version: 1.0.0
+    description: Owns Paytm/PhonePe wallets (create, add money, pay bill, transfer)
