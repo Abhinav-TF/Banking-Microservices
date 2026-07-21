@@ -1,8 +1,10 @@
 package com.tnf.accountservice.service;
 
 import com.tnf.accountservice.entity.*;
+import com.tnf.accountservice.exception.AccountNotFoundException;
 import com.tnf.accountservice.exception.InsufficientBalanceException;
 import com.tnf.accountservice.exception.InvalidAmountException;
+import com.tnf.accountservice.exception.TransferException;
 import com.tnf.accountservice.repository.AccountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +52,8 @@ public class AccountService {
     // Find by Account id
     public Account getAccountById(String id){
         logger.info("finding account for accountId: {} ", id);
-        return repository.findById(id).orElseThrow(() -> new RuntimeException("account not found"));
+        return repository.findById(id)
+                .orElseThrow(() -> new AccountNotFoundException("account not found: " + id));
     }
 
     // Find by customer id
@@ -77,7 +80,8 @@ public class AccountService {
     // Deposit
     public String deposit(String accountId, double amount){
         logger.info("finding account for accountId: {} ", accountId);
-        Account account = repository.findById(accountId).orElseThrow(() -> new RuntimeException("account not found"));
+        Account account = repository.findById(accountId)
+                .orElseThrow(() -> new AccountNotFoundException("account not found: " + accountId));
         logger.info("Account found: {} ", accountId);
 
         if(amount > 0){
@@ -102,7 +106,8 @@ public class AccountService {
 
     public String withdraw(String accountId, double amount){
         logger.info("finding account for accountId: {} ", accountId);
-        Account account = repository.findById(accountId).orElseThrow(() -> new RuntimeException("account not found"));
+        Account account = repository.findById(accountId)
+                .orElseThrow(() -> new AccountNotFoundException("account not found: " + accountId));
         logger.info("Account found: {} ", accountId);
 
         if(amount > 0 && account.getBalance() >= amount){
@@ -127,10 +132,56 @@ public class AccountService {
     }
 
     public String transfer(Transfer transfer){
-        withdraw(transfer.getSourceAccountId(), transfer.getAmount());
-        deposit(transfer.getTargetAccountId(), transfer.getAmount());
+        String sourceId = transfer.getSourceAccountId();
+        String targetId = transfer.getTargetAccountId();
+        double amount = transfer.getAmount();
 
-        return ("Transfer from " + transfer.getSourceAccountId() + " --> " + transfer.getTargetAccountId() + " successful" );
+        if (amount <= 0) {
+            throw new InvalidAmountException("invalid amount: " + amount);
+        }
+        if (sourceId == null || sourceId.equals(targetId)) {
+            throw new IllegalArgumentException("source and target accounts must be different");
+        }
+
+        // 1. Debit the source. withdraw() validates the source exists and has enough
+        //    balance, and throws BEFORE saving if not — so no money moves on a bad source.
+        withdraw(sourceId, amount);
+
+        // 2. Credit the target. The source is already debited at this point, so if the
+        //    deposit fails (e.g. the target does not exist) we compensate by crediting
+        //    the amount back to the source, then surface the original failure. This gives
+        //    us atomic-transfer semantics without needing MongoDB multi-document transactions.
+        try {
+            deposit(targetId, amount);
+        } catch (RuntimeException depositError) {
+            logger.error("deposit to {} failed after debiting {}; rolling back withdrawal of {}: {}",
+                    targetId, sourceId, amount, depositError.getMessage());
+            try {
+                refund(sourceId, amount);
+            } catch (RuntimeException refundError) {
+                logger.error("CRITICAL: rollback of {} to account {} FAILED: {}",
+                        amount, sourceId, refundError.getMessage());
+                throw new TransferException("Transfer failed and the automatic rollback ALSO failed for account "
+                        + sourceId + " - manual reconciliation required", refundError);
+            }
+            // Source balance restored; report the real reason the transfer failed.
+            throw depositError;
+        }
+
+        return ("Transfer from " + sourceId + " --> " + targetId + " successful");
+    }
+
+    // Compensating credit used to undo a withdrawal when the matching deposit fails.
+    private void refund(String accountId, double amount){
+        Account account = repository.findById(accountId)
+                .orElseThrow(() -> new AccountNotFoundException("account not found: " + accountId));
+        account.setBalance(account.getBalance() + amount);
+        repository.save(account);
+        logger.info("rolled back {} to account {} - restored balance: {}", amount, accountId, account.getBalance());
+
+        // Best-effort reversal entry so the ledger nets out against the earlier WITHDRAW.
+        TransactionDTO tx = new TransactionDTO(account.getId(), account.getType(), "REVERSAL", amount, account.getBalance());
+        createTransaction(tx);
     }
 
     // Helper Functions
