@@ -1,0 +1,79 @@
+2026-07-21 11:41:21.558 [main] INFO  c.t.t.TransactionServiceApplication - [,] - Starting TransactionServiceApplication using Java 25.0.2 with PID 61103 (/Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/transaction-service/target/classes started by prayas.yadav in /Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/transaction-service)
+2026-07-21 11:41:21.559 [main] INFO  c.t.t.TransactionServiceApplication - [,] - The following 1 profile is active: "dev"
+2026-07-21 11:41:22.010 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-07-21 11:41:22.073 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Finished Spring Data repository scanning in 60 ms. Found 1 MongoDB repository interface.
+2026-07-21 11:41:22.153 [main] INFO  o.s.cloud.context.scope.GenericScope - [,] - BeanFactory id=a27a0b1d-b230-364f-9b8c-be2175766158
+2026-07-21 11:41:22.268 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat initialized with port 8083 (http)
+2026-07-21 11:41:22.273 [main] INFO  o.a.catalina.core.StandardService - [,] - Starting service [Tomcat]
+2026-07-21 11:41:22.273 [main] INFO  o.a.catalina.core.StandardEngine - [,] - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-07-21 11:41:22.298 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring embedded WebApplicationContext
+2026-07-21 11:41:22.298 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - [,] - Root WebApplicationContext: initialization completed in 721 ms
+2026-07-21 11:41:22.455 [main] INFO  org.mongodb.driver.client - [,] - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "26.5.2"}, "platform": "Java/Oracle Corporation/25.0.2+10-LTS-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@701c482e], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4738131e, com.mongodb.Jep395RecordCodecProvider@3b576ee3, com.mongodb.KotlinCodecProvider@705d914f]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@6212ea52], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-07-21 11:41:22.460 [cluster-ClusterId{value='6a5f0d8a8ac886b5a989716f', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - [,] - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7673834, minRoundTripTimeNanos=0}
+2026-07-21 11:41:22.819 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - [,] - Eureka HTTP Client uses RestTemplate.
+2026-07-21 11:41:22.836 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - [,] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-21 11:41:22.839 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [,] - Exposing 1 endpoint beneath base path '/actuator'
+2026-07-21 11:41:22.886 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - [,] - Setting initial instance status as: STARTING
+2026-07-21 11:41:22.895 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Initializing Eureka in region us-east-1
+2026-07-21 11:41:22.897 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:41:22.899 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: true
+2026-07-21 11:41:22.900 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 11:41:23.056 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 11:41:23.057 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Starting heartbeat executor: renew interval is: 30
+2026-07-21 11:41:23.058 [main] INFO  c.n.discovery.InstanceInfoReplicator - [,] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-21 11:41:23.059 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Discovery Client initialized at timestamp 1784614283058 with initial instances count: 0
+2026-07-21 11:41:23.060 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Registering application TRANSACTION-SERVICE with eureka with status UP
+2026-07-21 11:41:23.060 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784614283060, current=UP, previous=STARTING]
+2026-07-21 11:41:23.061 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_TRANSACTION-SERVICE/10.132.127.211:transaction-service:8083: registering service...
+2026-07-21 11:41:23.071 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat started on port 8083 (http) with context path '/'
+2026-07-21 11:41:23.072 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [,] - Updating port to 8083
+2026-07-21 11:41:23.086 [main] INFO  c.t.t.TransactionServiceApplication - [,] - Started TransactionServiceApplication in 1.823 seconds (process running for 2.026)
+2026-07-21 11:41:23.121 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_TRANSACTION-SERVICE/10.132.127.211:transaction-service:8083 - registration status: 204
+2026-07-21 11:41:53.059 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 11:41:53.060 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 11:41:53.060 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 11:41:53.060 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 11:41:53.061 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 11:41:53.061 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: false
+2026-07-21 11:41:53.061 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 11:41:53.082 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 11:46:22.907 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:46:35.346 [http-nio-8083-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-21 11:46:35.346 [http-nio-8083-exec-3] INFO  o.s.web.servlet.DispatcherServlet - [,] - Initializing Servlet 'dispatcherServlet'
+2026-07-21 11:46:35.348 [http-nio-8083-exec-3] INFO  o.s.web.servlet.DispatcherServlet - [,] - Completed initialization in 2 ms
+2026-07-21 11:46:35.361 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5efa34300e7e006c16941c
+2026-07-21 11:46:35.361 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5efa34300e7e006c16941c
+2026-07-21 11:48:38.914 [http-nio-8083-exec-5] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:48:38.917 [http-nio-8083-exec-5] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:50:56.506 [http-nio-8083-exec-6] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:50:56.506 [http-nio-8083-exec-6] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:51:22.916 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:55:23.843 [http-nio-8083-exec-9] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:55:23.843 [http-nio-8083-exec-9] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:55:23.860 [http-nio-8083-exec-10] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f10d32fc37ce1514aa028
+2026-07-21 11:55:23.860 [http-nio-8083-exec-10] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f10d32fc37ce1514aa028
+2026-07-21 11:56:22.924 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:57:17.862 [http-nio-8083-exec-2] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:57:17.863 [http-nio-8083-exec-2] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 11:57:17.876 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5efa34300e7e006c16941c
+2026-07-21 11:57:17.876 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5efa34300e7e006c16941c
+2026-07-21 12:01:22.930 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 12:03:49.130 [http-nio-8083-exec-5] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:03:49.130 [http-nio-8083-exec-5] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:03:49.148 [http-nio-8083-exec-7] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:03:49.148 [http-nio-8083-exec-7] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:03:49.188 [http-nio-8083-exec-6] INFO  c.t.t.service.TransactionService - [,] - Starting getting transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:03:49.204 [http-nio-8083-exec-6] INFO  c.t.t.service.TransactionService - [,] - Found 6 transactions for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:04:05.224 [http-nio-8083-exec-9] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:04:05.224 [http-nio-8083-exec-9] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:04:05.229 [http-nio-8083-exec-10] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f12dd55d408b9882825fa
+2026-07-21 12:04:05.229 [http-nio-8083-exec-10] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f12dd55d408b9882825fa
+2026-07-21 12:05:19.404 [http-nio-8083-exec-2] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:05:19.405 [http-nio-8083-exec-2] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5f0f2e6ca947658337ac13
+2026-07-21 12:05:19.413 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Starting creation of transaction info for owner : 6a5efa34300e7e006c16941c
+2026-07-21 12:05:19.414 [http-nio-8083-exec-3] INFO  c.t.t.service.TransactionService - [,] - Saving Transaction in DB for owner : 6a5efa34300e7e006c16941c

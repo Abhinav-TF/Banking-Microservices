@@ -1,0 +1,488 @@
+2026-07-21 11:41:21.669 [main] INFO  c.t.a.AccountServiceApplication - [,] - Starting AccountServiceApplication using Java 25.0.2 with PID 61104 (/Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service/target/classes started by prayas.yadav in /Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service)
+2026-07-21 11:41:21.671 [main] INFO  c.t.a.AccountServiceApplication - [,] - The following 1 profile is active: "dev"
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 11:41:21.685 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@64b31700 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused. Will be trying the next url if available
+2026-07-21 11:41:21.685 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@60b85ba1 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:41:21.685 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 11:41:21.685 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@492fc69e uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 11:41:22.103 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-07-21 11:41:22.167 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Finished Spring Data repository scanning in 61 ms. Found 1 MongoDB repository interface.
+2026-07-21 11:41:22.244 [main] INFO  o.s.cloud.context.scope.GenericScope - [,] - BeanFactory id=e0f14e06-9dfc-3401-80c3-6a9f60a3c71e
+2026-07-21 11:41:22.360 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat initialized with port 9001 (http)
+2026-07-21 11:41:22.365 [main] INFO  o.a.catalina.core.StandardService - [,] - Starting service [Tomcat]
+2026-07-21 11:41:22.365 [main] INFO  o.a.catalina.core.StandardEngine - [,] - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-07-21 11:41:22.390 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring embedded WebApplicationContext
+2026-07-21 11:41:22.390 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - [,] - Root WebApplicationContext: initialization completed in 704 ms
+2026-07-21 11:41:22.628 [main] INFO  org.mongodb.driver.client - [,] - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "26.5.2"}, "platform": "Java/Oracle Corporation/25.0.2+10-LTS-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@240df292], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@333efb51, com.mongodb.Jep395RecordCodecProvider@2c451c4a, com.mongodb.KotlinCodecProvider@38ad86b1]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@73ff7a54], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-07-21 11:41:22.633 [cluster-ClusterId{value='6a5f0d8a6ca947658337ac12', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - [,] - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7938667, minRoundTripTimeNanos=0}
+2026-07-21 11:41:23.118 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - [,] - Eureka HTTP Client uses RestTemplate.
+2026-07-21 11:41:23.129 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - [,] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-21 11:41:23.131 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [,] - Exposing 17 endpoints beneath base path '/actuator'
+2026-07-21 11:41:23.152 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - [,] - Setting initial instance status as: STARTING
+2026-07-21 11:41:23.162 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Initializing Eureka in region us-east-1
+2026-07-21 11:41:23.164 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: true
+2026-07-21 11:41:23.167 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 11:41:23.243 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 11:41:23.243 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Starting heartbeat executor: renew interval is: 30
+2026-07-21 11:41:23.244 [main] INFO  c.n.discovery.InstanceInfoReplicator - [,] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-21 11:41:23.244 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Discovery Client initialized at timestamp 1784614283244 with initial instances count: 0
+2026-07-21 11:41:23.245 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Registering application ACCOUNT-SERVICE with eureka with status UP
+2026-07-21 11:41:23.245 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784614283245, current=UP, previous=STARTING]
+2026-07-21 11:41:23.246 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 11:41:23.250 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat started on port 9001 (http) with context path '/'
+2026-07-21 11:41:23.251 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [,] - Updating port to 9001
+2026-07-21 11:41:23.261 [main] INFO  c.t.a.AccountServiceApplication - [,] - Started AccountServiceApplication in 1.988 seconds (process running for 2.188)
+2026-07-21 11:41:23.262 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 11:41:53.247 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 11:41:53.247 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 11:41:53.248 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 11:41:53.248 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 11:41:53.248 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 11:41:53.248 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: false
+2026-07-21 11:41:53.248 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 11:41:53.264 [DiscoveryClient-CacheRefreshExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 11:42:24.304 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2026-07-21 11:42:24.305 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Dropped 1 spans due to ConnectException()
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:923)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41)
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123)
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1070)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:223)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:277)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:235)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:955)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:932)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:942)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:211)
+	... 9 common frames omitted
+2026-07-21 11:43:30.922 [http-nio-9001-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-21 11:43:30.923 [http-nio-9001-exec-3] INFO  o.s.web.servlet.DispatcherServlet - [,] - Initializing Servlet 'dispatcherServlet'
+2026-07-21 11:43:30.928 [http-nio-9001-exec-3] INFO  o.s.web.servlet.DispatcherServlet - [,] - Completed initialization in 5 ms
+2026-07-21 11:43:31.040 [http-nio-9001-exec-3] INFO  o.s.api.AbstractOpenApiResource - [6a5f0e0a35e125a2c9e682c475e87b02,053c4851702b1500] - Init duration for springdoc-openapi is: 74 ms
+2026-07-21 11:46:23.172 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:46:35.192 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - finding account for accountId: 6a5efa34300e7e006c16941c 
+2026-07-21 11:46:35.218 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - Account found: 6a5efa34300e7e006c16941c 
+2026-07-21 11:46:35.227 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - new transaction creation
+2026-07-21 11:46:35.227 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:46:35.291 [http-nio-9001-exec-5] ERROR i.n.r.d.DnsServerAddressStreamProviders - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-07-21 11:46:35.401 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - new tx: TransactionDTO{ownerId='6a5efa34300e7e006c16941c', type='CURRENT', direction='DEPOSIT', amount=250.0, balanceAfter=999.0}
+2026-07-21 11:46:35.402 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f0ec3ac283cea34daeee79ecf9afa,27b3ece284bff5f1] - 6a5efa34300e7e006c16941c - Updated balance: 999.0 
+2026-07-21 11:48:22.194 [http-nio-9001-exec-7] INFO  c.t.a.service.AccountService - [6a5f0f2e084b4fffa6f7fe95ebb942b2,4b60ed306f67caf8] - creating account for customerId: 6a5f0ef31e5a20835616ab8c 
+2026-07-21 11:48:38.904 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:48:38.906 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:48:38.906 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - new transaction creation
+2026-07-21 11:48:38.907 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:48:38.921 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='DEPOSIT', amount=250.0, balanceAfter=750.0}
+2026-07-21 11:48:38.921 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f0f3e55dbedf70f60c491c2ba8c41,4a9291e4be7faebe] - 6a5f0f2e6ca947658337ac13 - Updated balance: 750.0 
+2026-07-21 11:50:56.493 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:50:56.497 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:50:56.499 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - new transaction creation
+2026-07-21 11:50:56.499 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:50:56.511 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=50.0, balanceAfter=700.0}
+2026-07-21 11:50:56.511 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - 6a5f0f2e6ca947658337ac13 - Updated balance: 700.0 
+2026-07-21 11:50:56.511 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f0fc8a85773c8a2aa2a263dc883e3,ff4171a9d10ebb48] - finding account for accountId: 6a5ef896f6ce168ad811fb39 
+2026-07-21 11:50:56.515 [http-nio-9001-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - [,] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: account not found] with root cause
+java.lang.RuntimeException: account not found
+	at com.tnf.accountservice.service.AccountService.lambda$deposit$0(AccountService.java:80)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.tnf.accountservice.service.AccountService.deposit(AccountService.java:80)
+	at com.tnf.accountservice.service.AccountService.transfer(AccountService.java:131)
+	at com.tnf.accountservice.controller.AccountController.transfer(AccountController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-07-21 11:51:23.184 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:52:13.962 [http-nio-9001-exec-1] INFO  c.t.a.service.AccountService - [6a5f10157756560bad4310a599a655c6,ad4310a599a655c6] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:52:13.973 [http-nio-9001-exec-3] INFO  c.t.a.service.AccountService - [6a5f101582d5734efa6953e53cca604e,fa6953e53cca604e] - finding account for accountId: 6a5ef896f6ce168ad811fb39 
+2026-07-21 11:52:13.974 [http-nio-9001-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - [,] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: account not found] with root cause
+java.lang.RuntimeException: account not found
+	at com.tnf.accountservice.service.AccountService.lambda$getAccountById$0(AccountService.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.tnf.accountservice.service.AccountService.getAccountById(AccountService.java:53)
+	at com.tnf.accountservice.controller.AccountController.getAccountById(AccountController.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-07-21 11:54:46.197 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Unregistering application ACCOUNT-SERVICE with eureka with status DOWN
+2026-07-21 11:54:46.198 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784615086198, current=DOWN, previous=UP]
+2026-07-21 11:54:46.198 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 11:54:46.201 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - [,] - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-21 11:54:46.202 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - [,] - Graceful shutdown complete
+2026-07-21 11:54:46.205 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 11:54:48.862 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Shutting down DiscoveryClient ...
+2026-07-21 11:54:50.478 [main] INFO  c.t.a.AccountServiceApplication - [,] - Starting AccountServiceApplication using Java 25.0.2 with PID 63722 (/Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service/target/classes started by prayas.yadav in /Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service)
+2026-07-21 11:54:50.479 [main] INFO  c.t.a.AccountServiceApplication - [,] - The following 1 profile is active: "dev"
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 11:54:50.489 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@64b31700 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused. Will be trying the next url if available
+2026-07-21 11:54:50.489 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@60b85ba1 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 11:54:50.489 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 11:54:50.489 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@492fc69e uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 11:54:50.771 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-07-21 11:54:50.811 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Finished Spring Data repository scanning in 38 ms. Found 1 MongoDB repository interface.
+2026-07-21 11:54:50.863 [main] INFO  o.s.cloud.context.scope.GenericScope - [,] - BeanFactory id=119a9538-ccf6-3a25-8fc2-6a7e25bc5304
+2026-07-21 11:54:50.945 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat initialized with port 9001 (http)
+2026-07-21 11:54:50.949 [main] INFO  o.a.catalina.core.StandardService - [,] - Starting service [Tomcat]
+2026-07-21 11:54:50.949 [main] INFO  o.a.catalina.core.StandardEngine - [,] - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-07-21 11:54:50.986 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring embedded WebApplicationContext
+2026-07-21 11:54:50.986 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - [,] - Root WebApplicationContext: initialization completed in 497 ms
+2026-07-21 11:54:51.157 [main] INFO  org.mongodb.driver.client - [,] - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "26.5.2"}, "platform": "Java/Oracle Corporation/25.0.2+10-LTS-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@59b3f162], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7ade62a6, com.mongodb.Jep395RecordCodecProvider@53d15034, com.mongodb.KotlinCodecProvider@9976b27]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4fe9a396], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-07-21 11:54:51.160 [cluster-ClusterId{value='6a5f10b32fc37ce1514aa027', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - [,] - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5101000, minRoundTripTimeNanos=0}
+2026-07-21 11:54:51.476 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - [,] - Eureka HTTP Client uses RestTemplate.
+2026-07-21 11:54:51.484 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - [,] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-21 11:54:51.486 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [,] - Exposing 17 endpoints beneath base path '/actuator'
+2026-07-21 11:54:51.506 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - [,] - Setting initial instance status as: STARTING
+2026-07-21 11:54:51.512 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Initializing Eureka in region us-east-1
+2026-07-21 11:54:51.513 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: true
+2026-07-21 11:54:51.516 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 11:54:51.587 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 11:54:51.588 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Starting heartbeat executor: renew interval is: 30
+2026-07-21 11:54:51.588 [main] INFO  c.n.discovery.InstanceInfoReplicator - [,] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-21 11:54:51.588 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Discovery Client initialized at timestamp 1784615091588 with initial instances count: 6
+2026-07-21 11:54:51.589 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Registering application ACCOUNT-SERVICE with eureka with status UP
+2026-07-21 11:54:51.589 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784615091589, current=UP, previous=STARTING]
+2026-07-21 11:54:51.590 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 11:54:51.593 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat started on port 9001 (http) with context path '/'
+2026-07-21 11:54:51.593 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [,] - Updating port to 9001
+2026-07-21 11:54:51.603 [main] INFO  c.t.a.AccountServiceApplication - [,] - Started AccountServiceApplication in 1.497 seconds (process running for 1.649)
+2026-07-21 11:54:51.604 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 11:54:51.867 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Unregistering ...
+2026-07-21 11:54:51.877 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - deregister  status: 200
+2026-07-21 11:54:51.877 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Completed shut down of DiscoveryClient
+2026-07-21 11:54:52.636 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2026-07-21 11:54:52.637 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Dropped 1 spans due to ConnectException()
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:923)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41)
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123)
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1070)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:223)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:277)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:235)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:955)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:932)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:942)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:211)
+	... 9 common frames omitted
+2026-07-21 11:55:09.325 [http-nio-9001-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-21 11:55:09.326 [http-nio-9001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - [,] - Initializing Servlet 'dispatcherServlet'
+2026-07-21 11:55:09.327 [http-nio-9001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - [,] - Completed initialization in 1 ms
+2026-07-21 11:55:09.340 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10c55b7383dc13b7a1a74ce723d1,13b7a1a74ce723d1] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:55:09.436 [http-nio-9001-exec-6] INFO  c.t.a.service.AccountService - [6a5f10c5bebc1fad1385527b9524520a,1385527b9524520a] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:55:09.454 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f10c51b21f8bbe02892e52afb92ae,e02892e52afb92ae] - finding account for accountId: 6a5ef896f6ce168ad811fb39 
+2026-07-21 11:55:21.651 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - Re-registering apps/ACCOUNT-SERVICE
+2026-07-21 11:55:21.651 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 11:55:21.654 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 11:55:23.693 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f10d35c384961970a85608e5ccc65,970a85608e5ccc65] - creating account for customerId: 6a5f0ef31e5a20835616ab8c 
+2026-07-21 11:55:23.735 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:55:23.736 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:55:23.739 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - new transaction creation
+2026-07-21 11:55:23.739 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:55:23.804 [http-nio-9001-exec-2] ERROR i.n.r.d.DnsServerAddressStreamProviders - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-07-21 11:55:23.856 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=50.0, balanceAfter=650.0}
+2026-07-21 11:55:23.856 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - 6a5f0f2e6ca947658337ac13 - Updated balance: 650.0 
+2026-07-21 11:55:23.856 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - finding account for accountId: 6a5f10d32fc37ce1514aa028 
+2026-07-21 11:55:23.858 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - Account found: 6a5f10d32fc37ce1514aa028 
+2026-07-21 11:55:23.858 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - new transaction creation
+2026-07-21 11:55:23.858 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:55:23.862 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - new tx: TransactionDTO{ownerId='6a5f10d32fc37ce1514aa028', type='SAVINGS', direction='DEPOSIT', amount=50.0, balanceAfter=150.0}
+2026-07-21 11:55:23.862 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f10d35e76c5cffa487380727089ef,fa487380727089ef] - 6a5f10d32fc37ce1514aa028 - Updated balance: 150.0 
+2026-07-21 11:55:23.872 [http-nio-9001-exec-3] INFO  c.t.a.service.AccountService - [6a5f10d39ad8237345942c2996e99c64,45942c2996e99c64] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:55:23.889 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f10d3d4660f6cf30ccac5a557ad66,f30ccac5a557ad66] - finding account for accountId: 6a5f10d32fc37ce1514aa028 
+2026-07-21 11:56:20.078 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f110c388040b459f09b5eabc4ebb5,b6d19108acdd6bbd] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:56:52.478 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f112c55c9d14b31a7b8d38fa2dcbb,5e5edbee5dc23d4a] - finding account for accountId: 6a5ef896f6ce168ad811fb39 
+2026-07-21 11:57:17.850 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:57:17.852 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 11:57:17.853 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - new transaction creation
+2026-07-21 11:57:17.854 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:57:17.870 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=50.0, balanceAfter=600.0}
+2026-07-21 11:57:17.871 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - 6a5f0f2e6ca947658337ac13 - Updated balance: 600.0 
+2026-07-21 11:57:17.871 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - finding account for accountId: 6a5efa34300e7e006c16941c 
+2026-07-21 11:57:17.872 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - Account found: 6a5efa34300e7e006c16941c 
+2026-07-21 11:57:17.874 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - new transaction creation
+2026-07-21 11:57:17.874 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 11:57:17.878 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - new tx: TransactionDTO{ownerId='6a5efa34300e7e006c16941c', type='CURRENT', direction='DEPOSIT', amount=50.0, balanceAfter=1049.0}
+2026-07-21 11:57:17.878 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f1145b8d4ca3c1c576f64b5085aed,fb87c3d63381500c] - 6a5efa34300e7e006c16941c - Updated balance: 1049.0 
+2026-07-21 11:59:51.524 [AsyncResolver-bootstrap-executor-%d] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 12:03:27.287 [SpringApplicationShutdownHook] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Unregistering application ACCOUNT-SERVICE with eureka with status DOWN
+2026-07-21 12:03:27.288 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784615607288, current=DOWN, previous=UP]
+2026-07-21 12:03:27.288 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 12:03:27.290 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - [,] - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-21 12:03:27.292 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - [,] - Graceful shutdown complete
+2026-07-21 12:03:27.292 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 12:03:29.411 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Shutting down DiscoveryClient ...
+2026-07-21 12:03:31.063 [main] INFO  c.t.a.AccountServiceApplication - [,] - Starting AccountServiceApplication using Java 25.0.2 with PID 65573 (/Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service/target/classes started by prayas.yadav in /Users/prayas.yadav/Desktop/banking-test/Banking-Microservices/account-service)
+2026-07-21 12:03:31.065 [main] INFO  c.t.a.AccountServiceApplication - [,] - The following 1 profile is active: "dev"
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 12:03:31.075 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@64b31700 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused. Will be trying the next url if available
+2026-07-21 12:03:31.075 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@60b85ba1 uris = array<String>['http://localhost:8889'], optional = true, profiles = 'dev']): I/O error on GET request for "http://localhost:8889/account-service/dev": Connection refused
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Fetching config from server at : http://localhost:8889
+2026-07-21 12:03:31.075 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Exception on Url - http://localhost:8889:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused. Will be trying the next url if available
+2026-07-21 12:03:31.075 [main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - [,] - Could not locate PropertySource ([ConfigServerConfigDataResource@492fc69e uris = array<String>['http://localhost:8889'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8889/account-service/default": Connection refused
+2026-07-21 12:03:31.350 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-07-21 12:03:31.394 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - [,] - Finished Spring Data repository scanning in 42 ms. Found 1 MongoDB repository interface.
+2026-07-21 12:03:31.448 [main] INFO  o.s.cloud.context.scope.GenericScope - [,] - BeanFactory id=119a9538-ccf6-3a25-8fc2-6a7e25bc5304
+2026-07-21 12:03:31.529 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat initialized with port 9001 (http)
+2026-07-21 12:03:31.534 [main] INFO  o.a.catalina.core.StandardService - [,] - Starting service [Tomcat]
+2026-07-21 12:03:31.534 [main] INFO  o.a.catalina.core.StandardEngine - [,] - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-07-21 12:03:31.554 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring embedded WebApplicationContext
+2026-07-21 12:03:31.554 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - [,] - Root WebApplicationContext: initialization completed in 478 ms
+2026-07-21 12:03:31.717 [main] INFO  org.mongodb.driver.client - [,] - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.5.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "aarch64", "version": "26.5.2"}, "platform": "Java/Oracle Corporation/25.0.2+10-LTS-69"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@59b3f162], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7ade62a6, com.mongodb.Jep395RecordCodecProvider@53d15034, com.mongodb.KotlinCodecProvider@9976b27]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@4fe9a396], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-07-21 12:03:31.720 [cluster-ClusterId{value='6a5f12bb55d408b9882825f9', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - [,] - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5321625, minRoundTripTimeNanos=0}
+2026-07-21 12:03:32.033 [main] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - [,] - Eureka HTTP Client uses RestTemplate.
+2026-07-21 12:03:32.041 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - [,] - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-07-21 12:03:32.043 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - [,] - Exposing 17 endpoints beneath base path '/actuator'
+2026-07-21 12:03:32.061 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - [,] - Setting initial instance status as: STARTING
+2026-07-21 12:03:32.067 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Initializing Eureka in region us-east-1
+2026-07-21 12:03:32.068 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - [,] - Resolving eureka endpoints via configuration
+2026-07-21 12:03:32.070 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Disable delta property : false
+2026-07-21 12:03:32.070 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Single vip registry refresh property : null
+2026-07-21 12:03:32.070 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Force full registry fetch : false
+2026-07-21 12:03:32.070 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application is null : false
+2026-07-21 12:03:32.070 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Registered Applications size is zero : true
+2026-07-21 12:03:32.071 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Application version is -1: true
+2026-07-21 12:03:32.071 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Getting all instance registry info from the eureka server
+2026-07-21 12:03:32.138 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - The response status is 200
+2026-07-21 12:03:32.139 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Starting heartbeat executor: renew interval is: 30
+2026-07-21 12:03:32.140 [main] INFO  c.n.discovery.InstanceInfoReplicator - [,] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-07-21 12:03:32.140 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Discovery Client initialized at timestamp 1784615612140 with initial instances count: 6
+2026-07-21 12:03:32.141 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - [,] - Registering application ACCOUNT-SERVICE with eureka with status UP
+2026-07-21 12:03:32.141 [main] INFO  c.netflix.discovery.DiscoveryClient - [,] - Saw local status change event StatusChangeEvent [timestamp=1784615612141, current=UP, previous=STARTING]
+2026-07-21 12:03:32.142 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 12:03:32.146 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - [,] - Tomcat started on port 9001 (http) with context path '/'
+2026-07-21 12:03:32.147 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - [,] - Updating port to 9001
+2026-07-21 12:03:32.156 [DiscoveryClient-InstanceInfoReplicator-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 12:03:32.157 [main] INFO  c.t.a.AccountServiceApplication - [,] - Started AccountServiceApplication in 1.405 seconds (process running for 1.557)
+2026-07-21 12:03:32.413 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Unregistering ...
+2026-07-21 12:03:32.420 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - deregister  status: 200
+2026-07-21 12:03:32.420 [SpringApplicationShutdownHook] INFO  c.netflix.discovery.DiscoveryClient - [,] - Completed shut down of DiscoveryClient
+2026-07-21 12:03:48.971 [http-nio-9001-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - [,] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-21 12:03:48.971 [http-nio-9001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - [,] - Initializing Servlet 'dispatcherServlet'
+2026-07-21 12:03:48.972 [http-nio-9001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - [,] - Completed initialization in 1 ms
+2026-07-21 12:03:48.985 [http-nio-9001-exec-2] INFO  c.t.a.service.AccountService - [6a5f12cc0d2aec682543b7349cc921ea,2543b7349cc921ea] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:03:49.022 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:03:49.024 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:03:49.031 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - new transaction creation
+2026-07-21 12:03:49.031 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:03:49.091 [http-nio-9001-exec-4] ERROR i.n.r.d.DnsServerAddressStreamProviders - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-07-21 12:03:49.142 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=50.0, balanceAfter=550.0}
+2026-07-21 12:03:49.143 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - 6a5f0f2e6ca947658337ac13 - Updated balance: 550.0 
+2026-07-21 12:03:49.143 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - finding account for accountId: deadbeefdeadbeefdeadbeef 
+2026-07-21 12:03:49.144 [http-nio-9001-exec-4] ERROR c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - deposit to deadbeefdeadbeefdeadbeef failed after debiting 6a5f0f2e6ca947658337ac13; rolling back withdrawal of 50.0: account not found: deadbeefdeadbeefdeadbeef
+2026-07-21 12:03:49.146 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - rolled back 50.0 to account 6a5f0f2e6ca947658337ac13 - restored balance: 600.0
+2026-07-21 12:03:49.146 [http-nio-9001-exec-4] INFO  c.t.a.service.AccountService - [6a5f12cd22172534443a799b9583a25c,443a799b9583a25c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:03:49.161 [http-nio-9001-exec-6] INFO  c.t.a.service.AccountService - [6a5f12cd4fa1fecfef88878e00fde429,ef88878e00fde429] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:03:50.041 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2026-07-21 12:03:50.042 [AsyncReporter{ZipkinHttpClientSender{http://localhost:9411/api/v2/spans}}] WARN  z.r.i.AsyncReporter$BoundedAsyncReporter - [,] - Dropped 2 spans due to ConnectException()
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:923)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinHttpClientSender.postSpans(ZipkinHttpClientSender.java:60)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:69)
+	at org.springframework.boot.actuate.autoconfigure.tracing.zipkin.HttpSender.postSpans(HttpSender.java:41)
+	at zipkin2.reporter.BaseHttpSender.send(BaseHttpSender.java:123)
+	at zipkin2.reporter.internal.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:266)
+	at zipkin2.reporter.internal.AsyncReporter$Flusher.run(AsyncReporter.java:352)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1070)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:223)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:277)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:235)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:955)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:932)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:531)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1794)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	... 1 common frames omitted
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:942)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:211)
+	... 9 common frames omitted
+2026-07-21 12:04:02.165 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - Re-registering apps/ACCOUNT-SERVICE
+2026-07-21 12:04:02.166 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001: registering service...
+2026-07-21 12:04:02.169 [DiscoveryClient-HeartbeatExecutor-%d] INFO  c.netflix.discovery.DiscoveryClient - [,] - DiscoveryClient_ACCOUNT-SERVICE/10.132.127.211:account-service:9001 - registration status: 204
+2026-07-21 12:04:05.170 [http-nio-9001-exec-8] INFO  c.t.a.service.AccountService - [6a5f12dd6270d8803e578c70c16e51f7,3e578c70c16e51f7] - creating account for customerId: 6a5f0ef31e5a20835616ab8c 
+2026-07-21 12:04:05.219 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:04:05.221 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:04:05.222 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - new transaction creation
+2026-07-21 12:04:05.222 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:04:05.226 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=100.0, balanceAfter=500.0}
+2026-07-21 12:04:05.226 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - 6a5f0f2e6ca947658337ac13 - Updated balance: 500.0 
+2026-07-21 12:04:05.226 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - finding account for accountId: 6a5f12dd55d408b9882825fa 
+2026-07-21 12:04:05.227 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - Account found: 6a5f12dd55d408b9882825fa 
+2026-07-21 12:04:05.228 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - new transaction creation
+2026-07-21 12:04:05.228 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:04:05.230 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - new tx: TransactionDTO{ownerId='6a5f12dd55d408b9882825fa', type='SAVINGS', direction='DEPOSIT', amount=100.0, balanceAfter=100.0}
+2026-07-21 12:04:05.231 [http-nio-9001-exec-10] INFO  c.t.a.service.AccountService - [6a5f12dd182b8ab1cb49eca66dc08b6c,cb49eca66dc08b6c] - 6a5f12dd55d408b9882825fa - Updated balance: 100.0 
+2026-07-21 12:04:05.239 [http-nio-9001-exec-1] INFO  c.t.a.service.AccountService - [6a5f12dd43d99da197ec23b297f06f85,97ec23b297f06f85] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:04:05.258 [http-nio-9001-exec-3] INFO  c.t.a.service.AccountService - [6a5f12dd36ec948a66282d6bf0df71ce,66282d6bf0df71ce] - finding account for accountId: 6a5f12dd55d408b9882825fa 
+2026-07-21 12:05:19.387 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - finding account for accountId: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:05:19.389 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - Account found: 6a5f0f2e6ca947658337ac13 
+2026-07-21 12:05:19.391 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - new transaction creation
+2026-07-21 12:05:19.391 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:05:19.409 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - new tx: TransactionDTO{ownerId='6a5f0f2e6ca947658337ac13', type='CURRENT', direction='WITHDRAW', amount=50.0, balanceAfter=450.0}
+2026-07-21 12:05:19.409 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - 6a5f0f2e6ca947658337ac13 - Updated balance: 450.0 
+2026-07-21 12:05:19.409 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - finding account for accountId: 6a5efa34300e7e006c16941c 
+2026-07-21 12:05:19.410 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - Account found: 6a5efa34300e7e006c16941c 
+2026-07-21 12:05:19.412 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - new transaction creation
+2026-07-21 12:05:19.412 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - Calling Transaction Service: http://TRANSACTION-SERVICE/transactions
+2026-07-21 12:05:19.416 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - new tx: TransactionDTO{ownerId='6a5efa34300e7e006c16941c', type='CURRENT', direction='DEPOSIT', amount=50.0, balanceAfter=1099.0}
+2026-07-21 12:05:19.416 [http-nio-9001-exec-5] INFO  c.t.a.service.AccountService - [6a5f132752356a18081763144a53d39f,8ba96e4c86dfb069] - 6a5efa34300e7e006c16941c - Updated balance: 1099.0 
