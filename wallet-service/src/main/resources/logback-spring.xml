@@ -3,13 +3,13 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
 
-    <!-- Pipes logs right into your running Logstash network port -->
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>localhost:50000</destination>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <destination>${LOGSTASH_DESTINATION:-localhost:50000}</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"service":"wallet-service"}</customFields>
+        </encoder>
     </appender>
 
-    <!-- File Appender for persistent logs -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/wallet-service.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -21,10 +21,9 @@
         </encoder>
     </appender>
 
-    <!-- Use both appenders -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
-        <!-- <appender-ref ref="LOGSTASH"/> -->
+        <appender-ref ref="LOGSTASH"/>
     </root>
 </configuration>

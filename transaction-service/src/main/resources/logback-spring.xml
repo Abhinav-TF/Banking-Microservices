@@ -3,19 +3,17 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
 
-    <!-- Ships JSON logs to Logstash (ELK). Async + non-blocking; auto-reconnects if Logstash is down. -->
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>${LOGSTASH_DESTINATION:-localhost:50000}</destination>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"service":"account-service"}</customFields>
+            <customFields>{"service":"transaction-service"}</customFields>
         </encoder>
     </appender>
 
-    <!-- Persistent rolling file logs -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/account-service.log</file>
+        <file>logs/transaction-service.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/account-service.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logs/transaction-service.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
