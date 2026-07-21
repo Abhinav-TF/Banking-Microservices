@@ -134,37 +134,10 @@ public class AccountService {
     }
 
     // Helper Functions
-
-    // GET CustomerDTO
-    private CustomerDTO fetchCustomer(String customerId){
-        try{
-            String customerServiceUrl = "http://CUSTOMER-SERVICE/api/customer/" + customerId;
-
-            logger.info("Fetching customer from: {}", customerServiceUrl);
-
-            return webClientBuilder
-                    .get()
-                    .uri(customerServiceUrl)
-                    .retrieve()
-                    .bodyToMono(CustomerDTO.class)
-                    .block();
-        }
-        catch (WebClientResponseException.NotFound e){
-            logger.error("Customer not found (404): {}", customerId);
-            return null;
-        }
-        catch (Exception e){
-            logger.error("Error in retrieving customer: {}", e.getMessage(), e);
-            return null;
-        }
-    }
-    
     // POST Transaction
-    
-    
     private void createTransaction(TransactionDTO tx){
         try{
-            String transactionServiceUrl = "http://TRANSACTION-SERVICE/api/transactions";
+            String transactionServiceUrl = "http://TRANSACTION-SERVICE/transactions";
 
             logger.info("Calling Transaction Service: {}", transactionServiceUrl);
             webClientBuilder
